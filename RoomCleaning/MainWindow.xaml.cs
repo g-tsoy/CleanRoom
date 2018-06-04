@@ -24,5 +24,21 @@ namespace RoomCleaning
         {
             InitializeComponent();
         }
+
+        private void ButtonClickEnterYourRoom(object sender, RoutedEventArgs e)
+        {
+            Schedule window = new Schedule();
+            window.ShowDialog();
+        }
+
+        private void ButtonClickRegistrateUser(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonClickRegistrateRoom(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

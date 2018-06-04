@@ -23,5 +23,15 @@ namespace RoomCleaning
         {
             InitializeComponent();
         }
+
+        private void ButtonClickCancel(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonClickOk(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

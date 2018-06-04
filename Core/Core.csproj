@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithm.cs" />
     <Compile Include="Classes\Reminder.cs" />
     <Compile Include="Classes\Room.cs" />
     <Compile Include="Classes\User.cs" />
