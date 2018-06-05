@@ -13,7 +13,7 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
 
-        <TabControl Grid.Row="1" Width="500">
+        <TabControl Grid.Row="1" Width="Auto">
             <TabItem Header="Schedule" 
                      FontSize="12"                              
                      FontFamily="Verdana">
@@ -71,6 +71,44 @@
                     <ListBox Name="C2" Grid.Column="6" Grid.Row="3"/>
                     <ListBox Name="C3" Grid.Column="7" Grid.Row="3"/>
 
+                </Grid>
+            </TabItem>
+            <TabItem Header="Communication">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Name="buttonSwap" Content="Swap" Margin="5" Grid.Column="3" Grid.Row="0"></Button>
+
+                    <DataGrid Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" Margin="5" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="From" Width="1*"/>
+                            <DataGridTextColumn Header="Message Type" Width="1*"/>
+                            <DataGridTextColumn Header="Message Date" Width="1*"/>
+                        </DataGrid.Columns>
+
+                        <DataGrid.RowDetailsTemplate>
+                            <DataTemplate>
+                                <DockPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="{Binding Details}" Grid.Column="0" Margin="5"/>
+                                        <Button Name="buttonInVisibleRow" Grid.Column="1" Margin="5" Content="Open"></Button>
+                                    </Grid>
+                                </DockPanel>
+                            </DataTemplate>
+                        </DataGrid.RowDetailsTemplate>
+                    </DataGrid>
                 </Grid>
             </TabItem>
 

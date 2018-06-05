@@ -54,6 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="IWantToSwapWindow.xaml.cs">
+      <DependentUpon>IWantToSwapWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -63,9 +66,16 @@
     <Compile Include="Schedule.xaml.cs">
       <DependentUpon>Schedule.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SubmiteAndEvaluateWindow.xaml.cs">
+      <DependentUpon>SubmiteAndEvaluateWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserRegistrationWindow.xaml.cs">
       <DependentUpon>UserRegistrationWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="IWantToSwapWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -87,6 +97,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Schedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubmiteAndEvaluateWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
