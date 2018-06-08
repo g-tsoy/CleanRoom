@@ -49,7 +49,7 @@ namespace Core
                 schedule[12 + i] = "I";
                 schedule[15 + i] = "I";
             }
-            else if (thisDayInYear - (firstDayWhenDutiesBegun + daysToNextDuty) % intervalDutiesOfOneUser == 0)
+            else if ((thisDayInYear - (firstDayWhenDutiesBegun + daysToNextDuty)) % intervalDutiesOfOneUser == 0)
             {
                 schedule[10 + i] = "I";
                 schedule[19 + i] = "I";
