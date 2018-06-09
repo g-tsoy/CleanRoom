@@ -23,6 +23,7 @@ namespace RoomCleaning
         public MainWindow()
         {
             InitializeComponent();
+            int a;
         }
 
         private void ButtonClickEnterYourRoom(object sender, RoutedEventArgs e)
