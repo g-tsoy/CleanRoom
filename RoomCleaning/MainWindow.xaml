@@ -5,12 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoomCleaning"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="350" ResizeMode="NoResize">
+        Title="MainWindow" Height="500" Width="380" ResizeMode="NoResize">
+    <Window.Resources>
+        <ControlTemplate TargetType="Button" x:Key="btTemplate">
+            <Border CornerRadius="25" 
+                    BorderBrush="CadetBlue" 
+                    BorderThickness="2"
+                    Background="LightBlue">
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <ContentControl Margin="5" 
+                                FontSize="18"
+                                FontFamily="Kristen ITC"
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center" 
+                                Content="{TemplateBinding Content}"/>
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
+    
     <Grid>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="300"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -22,9 +41,9 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Name="ButtonEnterYourRoom" Click="ButtonClickEnterYourRoom" Margin="5,10,5,10" Grid.Column="1" Grid.Row="3" Content="Enter Your Room" FontSize="18"></Button>
-        <Button Name="ButtonRegistrateUser" Click="ButtonClickRegistrateUser" Margin="5,10,5,10" Grid.Column="1" Grid.Row="4" Content="Registration of a new User" FontSize="18"></Button>
-        <Button Name="ButtonRegistrateRoom" Click="ButtonClickRegistrateRoom" Margin="5,10,5,10" Grid.Column="1" Grid.Row="5" Content="Registration of a Room" FontSize="18"></Button>
-        <TextBlock Margin="5" Grid.Column="1" Grid.Row="1" FontSize="22" HorizontalAlignment="Center">CleaningRoommates</TextBlock>
+        <Button x:Name="ButtonEnterYourRoom" Template="{StaticResource btTemplate}" Click="ButtonClickEnterYourRoom" Margin="5,10,5,10" Grid.Column="1" Grid.Row="3" Content="Enter Your Room"></Button>
+        <Button x:Name="ButtonRegistrateUser" Template="{StaticResource btTemplate}" Click="ButtonClickRegistrateUser" Margin="5,10,5,10" Grid.Column="1" Grid.Row="4" Content="Registration of a new User"></Button>
+        <Button x:Name="ButtonRegistrateRoom" Template="{StaticResource btTemplate}" Click="ButtonClickRegistrateRoom" Margin="5,10,5,10" Grid.Column="1" Grid.Row="5" Content="Registration of a Room"></Button>
+        <TextBlock Margin="5" Grid.Column="1" Grid.Row="1" FontFamily="Kristen ITC" FontSize="22" HorizontalAlignment="Center">CleaningRoommates</TextBlock>
     </Grid>
 </Window>

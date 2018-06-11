@@ -54,6 +54,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ControlWindow.xaml.cs">
+      <DependentUpon>ControlWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IAgreeOrDisagreeToSwapWindow.xaml.cs">
+      <DependentUpon>IAgreeOrDisagreeToSwapWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IWantToSwapWindow.xaml.cs">
       <DependentUpon>IWantToSwapWindow.xaml</DependentUpon>
     </Compile>
@@ -66,12 +72,20 @@
     <Compile Include="Schedule.xaml.cs">
       <DependentUpon>Schedule.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SubmiteAndEvaluateWindow.xaml.cs">
-      <DependentUpon>SubmiteAndEvaluateWindow.xaml</DependentUpon>
+    <Compile Include="SubmiteWorkWindow.xaml.cs">
+      <DependentUpon>SubmiteWorkWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserRegistrationWindow.xaml.cs">
       <DependentUpon>UserRegistrationWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="ControlWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IAgreeOrDisagreeToSwapWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="IWantToSwapWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -100,7 +114,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SubmiteAndEvaluateWindow.xaml">
+    <Page Include="SubmiteWorkWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace RoomCleaning
 {
     /// <summary>
-    /// Interaction logic for SubmiteAndEvaluateWindow.xaml
+    /// Interaction logic for IAgreeOrDisagreeToSwapWindow.xaml
     /// </summary>
-    public partial class SubmiteAndEvaluateWindow : Window
+    public partial class IAgreeOrDisagreeToSwapWindow : Window
     {
-        public SubmiteAndEvaluateWindow()
+        public IAgreeOrDisagreeToSwapWindow()
         {
             InitializeComponent();
         }

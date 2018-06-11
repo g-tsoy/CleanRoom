@@ -7,7 +7,41 @@
         
         xmlns:local="clr-namespace:RoomCleaning"
         mc:Ignorable="d"
-        Title="Schedule" Height="300" Width="500">
+        Title="Schedule" Height="400" Width="600">
+    <Window.Resources>
+      
+        <ControlTemplate TargetType="Button" x:Key="btTemplate">
+            <Border CornerRadius="25" 
+                    BorderBrush="CadetBlue" 
+                    BorderThickness="2"
+                    Background="LightBlue">
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <ContentControl Margin="5" 
+                                FontSize="10"
+                                FontFamily="Kristen ITC"
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center" 
+                                Content="{TemplateBinding Content}"/>
+            </Border>
+        </ControlTemplate>
+
+        <ControlTemplate TargetType="{x:Type TabItem}" x:Key="tcTemp">
+            <Border 
+                Width="Auto"
+                CornerRadius="10,10,0,0"
+                Margin="0,0,0,-1"
+                    BorderBrush="CadetBlue" 
+                    BorderThickness="2"
+                    Background="LightBlue">
+
+                <ContentPresenter Margin="5" 
+                                  ContentSource="Header"/>
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
+
     <Grid>
 
         <Grid.RowDefinitions>
@@ -15,10 +49,11 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
 
-        <TabControl Grid.Row="1" Width="Auto">
-            <TabItem Header="Schedule" 
-                     FontSize="12"                              
-                     FontFamily="Verdana">
+        <TabControl  Grid.Row="1" Width="Auto">
+            <TabItem Header="Schedule"
+                     FontSize="12"
+                     FontFamily="Kristen ITC"
+                     Template="{StaticResource tcTemp}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"/>
@@ -61,7 +96,7 @@
                         Grid.Row="4"
                         Text="Lola" />
 
-                    <Grid Name="schGrid" Grid.Column="1" Grid.ColumnSpan="7" Grid.Row="2" Grid.RowSpan="3">
+                    <Grid Background="White" Name="schGrid" Grid.Column="1" Grid.ColumnSpan="7" Grid.Row="2" Grid.RowSpan="3">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
@@ -81,21 +116,25 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Communication">
+            <TabItem Header="Communication"
+                     FontSize="12"
+                     FontFamily="Kristen ITC"
+                     Template="{StaticResource tcTemp}">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="12*"/>
+                        <ColumnDefinition Width="61*"/>
+                        <ColumnDefinition Width="73*"/>
+                        <ColumnDefinition Width="73*"/>
+                        <ColumnDefinition Width="73*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Button Name="buttonSwap" Content="Swap" Margin="5" Grid.Column="3" Grid.Row="0"></Button>
+                    <Button Name="buttonSwap"  Template="{StaticResource btTemplate}" Content="Swap" Margin="4.5,5,5,5" Grid.Column="4" Grid.Row="0"></Button>
 
-                    <DataGrid Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" Margin="5" AutoGenerateColumns="False">
+                    <DataGrid Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="1" Margin="5" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="From" Width="1*"/>
                             <DataGridTextColumn Header="Message Type" Width="1*"/>
@@ -120,6 +159,35 @@
                 </Grid>
             </TabItem>
 
+            <TabItem Header="Ask WWW Questions"
+                     FontSize="12"
+                     FontFamily="Kristen ITC"
+                     Template="{StaticResource tcTemp}">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBox Name="textBoxQuery" Grid.Column="0" Margin="5"></TextBox>
+                    <Button Grid.Column="1" Margin="5 3"  Template="{StaticResource btTemplate}">Search online</Button>
+                    <Button Grid.Column="2" Margin="5 3"  Template="{StaticResource btTemplate}">Browse</Button>
+                    <ListBox Name="listBoxResults" Grid.Row="1" Grid.ColumnSpan="3" Margin="5">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock FontSize="14" Text="{Binding Title}"/>
+                                    <TextBlock FontSize="10" Text="{Binding Description}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
