@@ -24,6 +24,12 @@ namespace RoomCleaning
             InitializeComponent();
         }
 
+        private void RestartTheWindow()
+        {
+            textBoxFullName.Text = "FullName";
+           
+        }
+
         private void ButtonClickCancel(object sender, RoutedEventArgs e)
         {
 

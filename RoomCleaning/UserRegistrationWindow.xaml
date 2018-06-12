@@ -18,7 +18,8 @@
                                       Opacity=".5"
                                       Color="DarkBlue"/>
                 </Border.Effect>
-                <ContentControl FontSize="18"
+                <ContentControl FontSize="16"
+                                Margin="5"
                                 FontFamily="Kristen ITC"
                                 HorizontalAlignment="Center" 
                                 VerticalAlignment="Center" 
@@ -29,13 +30,15 @@
             <Border CornerRadius="25" 
                     BorderBrush="WhiteSmoke" 
                     BorderThickness="2"
-                    Background="White">
+                    Background="White"
+                    Margin="1">
                 <Border.Effect>
-                    <DropShadowEffect ShadowDepth="5" 
-                                      Opacity=".5"
-                                      Color="DarkBlue"/>
-                </Border.Effect>
-                <ContentControl FontSize="18"
+                        <DropShadowEffect ShadowDepth="5"
+                                          Opacity=".5"
+                                          Color="DarkBlue"
+                                          BlurRadius="15"/>
+                    </Border.Effect>
+                    <ContentControl FontSize="18"
                                 FontFamily="Kristen ITC"
                                 VerticalAlignment="Center"/>
             </Border>
@@ -44,9 +47,13 @@
             <Border CornerRadius="25" 
                     BorderBrush="WhiteSmoke" 
                     BorderThickness="2"
-                    Background="White">
+                    Background="White"
+                    Margin="1">
                 <Border.Effect>
-                    <DropShadowEffect ShadowDepth="5" Opacity=".5"/>
+                    <DropShadowEffect ShadowDepth="5"
+                                          Opacity=".5"
+                                          Color="DarkBlue"
+                                          BlurRadius="15"/>
                 </Border.Effect>
                 <ContentControl FontSize="18"
                                 FontFamily="Kristen ITC"
@@ -59,7 +66,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid>
+    <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition/>
@@ -75,22 +82,22 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Registrate User" Margin="5" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18"></TextBlock>
-        <TextBlock Margin="5" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="18">Full Name</TextBlock>
+        <TextBlock Text="Registrate User" Margin="5" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"></TextBlock>
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right">Full Name</TextBlock>
         <TextBox Name="textBoxFullName" Template="{StaticResource tbTemplate}" Margin="5" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2"></TextBox>
-        <TextBlock Margin="5" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="18">Login</TextBlock>
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right">Login</TextBlock>
         <TextBox Name="textBoxLogin" Template="{StaticResource tbTemplate}" Margin="5" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3"></TextBox>
-        <TextBlock Margin="5" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="18">Password</TextBlock>
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right">Password</TextBlock>
         <PasswordBox Name="passwordBoxPassword"  Template="{StaticResource psTemplate}"  Margin="5" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4"></PasswordBox>
-        <TextBlock Margin="5" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="18">Repeat Password</TextBlock>
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Right">Repeat Password</TextBlock>
         <PasswordBox Name="passwordBoxRepeatPas" Template="{StaticResource psTemplate}" Margin="5" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5"></PasswordBox>
-        <TextBlock Margin="5" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="18">Room Key</TextBlock>
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Right">Room Key</TextBlock>
         <PasswordBox Name="passwordBoxRoomKey" Template="{StaticResource psTemplate}" Margin="5" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6"></PasswordBox>
         <DockPanel Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="7" Margin="5,10,5,10">
-            <Button Name="buttonOk" Template="{StaticResource btTemplate}" Content="Ok" Click="ButtonClickOk" FontSize="18" Margin="100,0,0,0" Width="100"></Button>
-            <Button Name="buttonCancel" Template="{StaticResource btTemplate}" Content="Cancel" Click="ButtonClickCancel" FontSize="18" Width="100"></Button>
+            <Button Name="buttonOk" Template="{StaticResource btTemplate}" Content="Ok" Click="ButtonClickOk" Margin="100,0,0,0"></Button>
+            <Button Name="buttonCancel" Template="{StaticResource btTemplate}" Content="Cancel" Click="ButtonClickCancel"></Button>
         </DockPanel>
     </Grid>
 </Window>

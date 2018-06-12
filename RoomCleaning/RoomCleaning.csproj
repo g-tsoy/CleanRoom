@@ -155,5 +155,11 @@
       <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\welcome-photos2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

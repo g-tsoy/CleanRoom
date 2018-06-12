@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoomCleaning"
         mc:Ignorable="d"
-          Title="LoginWindow" Height="350" Width="500" ResizeMode="NoResize">
+          Title="LoginWindow" Height="500" Width="500" ResizeMode="NoResize">
     <Window.Resources>
         <ControlTemplate TargetType="Button" x:Key="btTemplate">
             <Border Width="100"
@@ -14,9 +14,12 @@
                     BorderThickness="2"
                     Background="LightBlue">
                 <Border.Effect>
-                    <DropShadowEffect/>
+                    <DropShadowEffect ShadowDepth="5" 
+                                      Opacity=".5"
+                                      Color="DarkBlue"/>
                 </Border.Effect>
-                <ContentControl FontSize="18"
+                <ContentControl FontSize="16"
+                                Margin="5"
                                 FontFamily="Kristen ITC"
                                 HorizontalAlignment="Center" 
                                 VerticalAlignment="Center" 
@@ -27,9 +30,13 @@
             <Border CornerRadius="25" 
                     BorderBrush="WhiteSmoke" 
                     BorderThickness="2"
-                    Background="White">
+                    Background="White"
+                    Margin="1">
                 <Border.Effect>
-                    <DropShadowEffect/>
+                    <DropShadowEffect ShadowDepth="5"
+                                          Opacity=".5"
+                                          Color="DarkBlue"
+                                          BlurRadius="15"/>
                 </Border.Effect>
                 <ContentControl FontSize="18"
                                 FontFamily="Kristen ITC"
@@ -40,9 +47,13 @@
             <Border CornerRadius="25" 
                     BorderBrush="WhiteSmoke" 
                     BorderThickness="2"
-                    Background="White">
+                    Background="White"
+                    Margin="1">
                 <Border.Effect>
-                    <DropShadowEffect/>
+                    <DropShadowEffect ShadowDepth="5"
+                                          Opacity=".5"
+                                          Color="DarkBlue"
+                                          BlurRadius="15"/>
                 </Border.Effect>
                 <ContentControl FontSize="18"
                                 FontFamily="Kristen ITC"
@@ -54,9 +65,10 @@
             <Setter Property="FontSize" Value="18"/>
         </Style>
     </Window.Resources>
-    <Grid>
+    
+    <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="110"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition Width="50"/>
@@ -68,13 +80,18 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Enter your personal data" Margin="5" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18"></TextBlock>
-        <TextBlock Margin="5" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right">Login</TextBlock>
-        <TextBox x:Name="textBoxLogin" Template="{StaticResource tbTemplate}" Margin="5" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2"></TextBox>
-        <TextBlock Margin="5" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right">Password</TextBlock>
-        <PasswordBox x:Name="passwordBox" Template="{StaticResource psTemplate}" Margin="5" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3"></PasswordBox>
-        <DockPanel Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="4" Margin="5,10,5,10">
+        <Image Source="Resources/welcome-photos2.png" Stretch="Fill" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="4" Margin="20"/>
+
+        <TextBlock Text="Enter personal data to enter your room" Margin="5" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"></TextBlock>
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Right">Login</TextBlock>
+        <TextBox x:Name="textBoxLogin" Template="{StaticResource tbTemplate}" Margin="5" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5"></TextBox>
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Right">Password</TextBlock>
+        <PasswordBox x:Name="passwordBox" Template="{StaticResource psTemplate}" Margin="5" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6"></PasswordBox>
+        <DockPanel Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="7" Margin="5,10,5,10">
             <Button x:Name="buttonOk" Template="{StaticResource btTemplate}"  Content="Ok" Click="ButtonClickOk" Margin="100,0,0,0" ></Button>
             <Button x:Name="buttonCancel" Template="{StaticResource btTemplate}" Click="ButtonClickCancel">Cancel</Button>
         </DockPanel>
